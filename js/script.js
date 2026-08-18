@@ -35,13 +35,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Product Details Modal Logic ---
-    const modal = document.getElementById('product-modal');
-    const closeModalBtn = document.getElementById('close-modal');
+    // --- Product Details Modal Logic (Under Bootstrap Modal API) ---
+    const bsModalElement = document.getElementById('productModal');
+    const bsModal = new bootstrap.Modal(bsModalElement);
+    
     const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
-    const body = document.body;
-
-    // Elements inside the modal to update
     const modalImg = document.getElementById('modal-img');
     const modalTitle = document.getElementById('modal-title');
     const modalPrice = document.getElementById('modal-price');
@@ -68,28 +66,23 @@ document.addEventListener('DOMContentLoaded', () => {
             modalDesc.textContent = desc;
             modalImg.style.backgroundImage = `url('${imageSrc}')`;
 
-            // Show modal and prevent body scrolling
-            modal.classList.add('active');
-            body.classList.add('modal-open');
+            // Trigger Bootstrap modal to show
+            bsModal.show();
         });
     });
 
-    // Close Modal Function
-    const closeModal = () => {
-        modal.classList.remove('active');
-        body.classList.remove('modal-open');
-    };
-
-    // Close via X button
-    closeModalBtn.addEventListener('click', closeModal);
-
-    // Close when clicking the "Inquire Now" button
-    modalBuyBtn.addEventListener('click', closeModal);
-
-    // Close when clicking outside the modal content (on the dark overlay)
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
-    });
+    // Inquire Now routing
+    if (modalBuyBtn) {
+        modalBuyBtn.addEventListener('click', (e) => {
+            e.preventDefault(); 
+            bsModal.hide(); 
+            
+            setTimeout(() => {
+                const contactSection = document.getElementById('contact-us');
+                if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+            }, 350); // 350ms Bootstrap's fade transition
+        });
+    }
 });

@@ -9,244 +9,250 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Roboto+Serif:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
     
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+<body class="text-light">
 
     <!-- Global Persistent Background -->
     <div class="global-bg"></div>
 
     <!-- Navigation -->
-    <nav class="navbar glass-panel">
-        <div class="nav-container">
+    <nav class="navbar navbar-expand-lg fixed-top glass-panel py-3">
+        <div class="container-fluid px-4 px-md-5">
             <!-- Brand Logo -->
-            <a href="#home" class="brand-logo">
+            <a href="#home" class="navbar-brand d-flex align-items-center gap-3">
                 <img src="images/villarin scent and co. logo.png" alt="Villarin Logo" class="brand-icon">
-                <span class="brand-text">Villarin <span>Scent & Co.</span></span>
+                <span class="fs-4 fw-bolder text-white text-uppercase" style="letter-spacing: 2px;">Villarin <span class="fw-light text-secondary">Scent & Co.</span></span>
             </a>
             
-            <!-- CSS-only Mobile Menu Toggle -->
-            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
-            <label for="menu-toggle" class="mobile-menu-btn">
-                ☰
-            </label>
+            <!-- Changed to Bootstrap Mobile Menu Toggle -->
+             <button class="navbar-toggler border-0 shadow-none text-white fs-2 p-0" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav"> ☰ </button>
+            
 
             <!-- Nav Links -->
-            <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#heritage">Heritage</a></li>
-                <li><a href="#craftsmanship">Craftsmanship</a></li>
-                <li><a href="#signature-scents">Signature Scents</a></li>
-                <li><a href="#visit-us">Visit Us</a></li>
-                <li><a href="#contact-us">Contact Us</a></li>
-            </ul>
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav ms-auto gap-lg-4 text-center mt-4 mt-lg-0">
+                    <li class="nav-item"><a class="nav-link custom-nav-link text-white text-uppercase" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link custom-nav-link text-white text-uppercase" href="#heritage">Heritage</a></li>
+                    <li class="nav-item"><a class="nav-link custom-nav-link text-white text-uppercase" href="#craftsmanship">Craftsmanship</a></li>
+                    <li class="nav-item"><a class="nav-link custom-nav-link text-white text-uppercase" href="#signature-scents">Signature Scents</a></li>
+                    <li class="nav-item"><a class="nav-link custom-nav-link text-white text-uppercase" href="#visit-us">Visit Us</a></li>
+                    <li class="nav-item"><a class="nav-link custom-nav-link text-white text-uppercase" href="#contact-us">Contact Us</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
     <!-- Home Section -->
-    <section id="home" class="hero">
-        <div class="hero-content fade-in-load">
-            <h1>The Essence of Elegance</h1>
-            <p class="tagline">Define your presence with scent.</p>
-            <a href="#signature-scents" class="cta-button">Explore Collection</a>
+    <section id="home" class="vh-100 d-flex align-items-center justify-content-center text-center position-relative">
+        <div class="fade-in-load px-3 position-relative z-3">
+            <h1 class="display-2 fw-bolder text-uppercase mb-2" style="letter-spacing: -1px; text-shadow: 0 4px 20px rgba(0,0,0,0.5);">The Essence of Elegance</h1>
+            <p class="fs-4 text-warning fst-italic mb-5" style="letter-spacing: 1px;">Define your presence with scent.</p>
+            <a href="#signature-scents" class="cta-button text-uppercase d-inline-block px-5 py-3">Explore Collection</a>
         </div>
     </section>
 
     <!-- Heritage Section -->
-    <section id="heritage" class="content-section scroll-reveal">
-        <div class="section-container text-center">
-            <h2>Our Heritage</h2>
+    <section id="heritage" class="py-5 my-5 scroll-reveal">
+        <div class="container text-center">
+            <h2 class="text-uppercase mb-0">Our Heritage</h2>
             <div class="divider"></div>
-            <p class="lead-text">
+            <p class="lead text-secondary mx-auto" style="max-width: 800px; line-height: 1.8;">
                 Rooted in the timeless aromas of the Philippine archipelago, Villarin Scent and Co. blends our rich heritage of natural fragrances with modern sophistication. Every bottle captures the soul of the Filipino, a tapestry of vivid memories woven from island blossoms, rare resins, and the warmth of home.
             </p>
         </div>
     </section>
 
     <!-- Craftsmanship Section -->
-    <section id="craftsmanship" class="content-section bg-alt scroll-reveal">
-        <div class="section-container text-center">
-            <h2>Craftsmanship</h2>
+    <section id="craftsmanship" class="bg-alt py-5 my-5 scroll-reveal">
+        <div class="container text-center py-4">
+            <h2 class="text-uppercase mb-0">Craftsmanship</h2>
             <div class="divider"></div>
-            <p class="lead-text">
+            <p class="lead text-secondary mx-auto" style="max-width: 800px; line-height: 1.8;">
                 Drawing from the rich biodiversity of our islands, we carefully select native flora and precious local woods that define our aromatic history. We craft our fragrances with the same unhurried patience as our ancestors, allowing each blend to slowly macerate and harmonize, ensuring our heritage speaks through every drop.
             </p>
         </div>
     </section>
 
     <!-- Signature Scents Section -->
-    <section id="signature-scents" class="content-section scroll-reveal">
-        <div class="section-container relative-container">
-            <h2 class="text-center">Signature Scents</h2>
+    <section id="signature-scents" class="py-5 my-5 scroll-reveal">
+        <div class="container position-relative">
+            <h2 class="text-center text-uppercase mb-0">Signature Scents</h2>
             <div class="divider"></div>
             
-            <div class="carousel-wrapper">
-                <!-- Left Arrow -->
+            <div class="carousel-wrapper mt-5">
                 <button class="carousel-btn prev-btn" id="slide-left">&#10094;</button>
                 
                 <div class="carousel-track" id="scent-track">
                     <!-- Product 1 -->
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('images/Salimisim.jpg');">
+                        <div class="product-image rounded" style="background-image: url('images/Salimisim.jpg');">
                             <a href="#" class="image-overlay view-details-btn" 
                                data-title="Salimisim" 
                                data-price="₱ 3,250.00" 
                                data-notes="Muscovado Sugar, Manila Elemi (Native Resin), Vanilla Bean, Sandalwood" 
                                data-desc="A comforting fragrance that evokes the warmth of ancestral homes and quiet provincial afternoons. Salimisim stays close to the skin, blending creamy native woods and soft sweetness into a deeply personal scent." 
                                data-image="images/Salimisim.jpg">
-                               <span>View Details</span>
+                               <span class="text-uppercase border border-white text-white py-2 px-4">View Details</span>
                             </a>
                         </div>
-                        <h3>Salimisim</h3>
-                        <p>Warm, Nostalgic, Intimate</p>
-                        <div class="product-price">₱ 3,250.00</div>
+                        <h3 class="text-uppercase mt-4 fs-4 text-center" style="letter-spacing: 1px;">Salimisim</h3>
+                        <p class="text-secondary fst-italic text-center mt-2">Warm, Nostalgic, Intimate</p>
+                        <div class="text-warning fw-bold text-center mt-2 fs-5" style="letter-spacing: 1.5px;">₱ 3,250.00</div>
                     </div>
+
                     <!-- Product 2 -->
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('images/Alimyon.jpg');">
+                        <div class="product-image rounded" style="background-image: url('images/Alimyon.jpg');">
                             <a href="#" class="image-overlay view-details-btn" 
                                data-title="Alimyon" 
                                data-price="₱ 2,800.00" 
                                data-notes="Ylang-Ylang, Sampaguita (Philippine Jasmine), Coconut Water, White Musk" 
                                data-desc="A tribute to the rich botanical heritage of the islands. Alimyon captures the intoxicating scent of native Philippine blooms carried by a warm tropical breeze, perfect for a luxurious daytime signature." 
                                data-image="images/Alimyon.jpg">
-                               <span>View Details</span>
+                               <span class="text-uppercase border border-white text-white py-2 px-4">View Details</span>
                             </a>
                         </div>
-                        <h3>Alimyon</h3>
-                        <p>Lush, Radiant, Floral</p>
-                        <div class="product-price">₱ 2,800.00</div>
+                        <h3 class="text-uppercase mt-4 fs-4 text-center" style="letter-spacing: 1px;">Alimyon</h3>
+                        <p class="text-secondary fst-italic text-center mt-2">Lush, Radiant, Floral</p>
+                        <div class="text-warning fw-bold text-center mt-2 fs-5" style="letter-spacing: 1.5px;">₱ 2,800.00</div>
                     </div>
+
                     <!-- Product 3 -->
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('images/Takipsilim.jpg');">
+                        <div class="product-image rounded" style="background-image: url('images/Takipsilim.jpg');">
                             <a href="#" class="image-overlay view-details-btn" 
                                data-title="Takipsilim" 
                                data-price="₱ 2,650.00" 
                                data-notes="Philippine Agarwood (Oud), Black Pepper, Roasted Cacao, Leather" 
                                data-desc="A deeply alluring fragrance inspired by the fading tropical sun. Takipsilim is crafted for the evening, leaving a rich, woody trail reminiscent of shadowed forests and ember-lit island nights that commands attention." 
                                data-image="images/Takipsilim.jpg">
-                               <span>View Details</span>
+                               <span class="text-uppercase border border-white text-white py-2 px-4">View Details</span>
                             </a>
                         </div>
-                        <h3>Takipsilim</h3>
-                        <p>Rich, Smoky, Enigmatic</p>
-                        <div class="product-price">₱ 2,650.00</div>
+                        <h3 class="text-uppercase mt-4 fs-4 text-center" style="letter-spacing: 1px;">Takipsilim</h3>
+                        <p class="text-secondary fst-italic text-center mt-2">Rich, Smoky, Enigmatic</p>
+                        <div class="text-warning fw-bold text-center mt-2 fs-5" style="letter-spacing: 1.5px;">₱ 2,650.00</div>
                     </div>
+
                     <!-- Product 4 -->
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('images/Kalinaw.jpg');">
+                        <div class="product-image rounded" style="background-image: url('images/Kalinaw.jpg');">
                             <a href="#" class="image-overlay view-details-btn" 
                                data-title="Kalinaw" 
                                data-price="₱ 3,100.00" 
                                data-notes="Calamansi, Crushed Bamboo Leaves, Sea Salt, Vetiver" 
                                data-desc="The pure essence of a quiet morning by a secluded island shore. Kalinaw is a clean, airy, and grounding fragrance that brings a sense of absolute peace and clarity to the wearer." 
                                data-image="images/Kalinaw.jpg">
-                               <span>View Details</span>
+                               <span class="text-uppercase border border-white text-white py-2 px-4">View Details</span>
                             </a>
                         </div>
-                        <h3>Kalinaw</h3>
-                        <p>Crisp, Serene, Aquatic</p>
-                        <div class="product-price">₱ 3,100.00</div>
+                        <h3 class="text-uppercase mt-4 fs-4 text-center" style="letter-spacing: 1px;">Kalinaw</h3>
+                        <p class="text-secondary fst-italic text-center mt-2">Crisp, Serene, Aquatic</p>
+                        <div class="text-warning fw-bold text-center mt-2 fs-5" style="letter-spacing: 1.5px;">₱ 3,100.00</div>
                     </div>
+
                     <!-- Product 5 -->
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('images/Silyab.jpg');">
+                        <div class="product-image rounded" style="background-image: url('images/Silyab.jpg');">
                             <a href="#" class="image-overlay view-details-btn" 
                                data-title="Silyab" 
                                data-price="₱ 2,900.00" 
                                data-notes="Native Ginger, Philippine Pomelo, Pink Peppercorn, Cedarwood" 
                                data-desc="An energetic and punchy scent that instantly ignites the senses. Silyab represents the passionate warmth and lively spirit of the Filipino people, delivering a sharp, spicy freshness that leaves a lasting mark." 
                                data-image="images/Silyab.jpg">
-                               <span>View Details</span>
+                               <span class="text-uppercase border border-white text-white py-2 px-4">View Details</span>
                             </a>
                         </div>
-                        <h3>Silyab</h3>
-                        <p>Bold, Fiery, Vibrant</p>
-                        <div class="product-price">₱ 2,900.00</div>
+                        <h3 class="text-uppercase mt-4 fs-4 text-center" style="letter-spacing: 1px;">Silyab</h3>
+                        <p class="text-secondary fst-italic text-center mt-2">Bold, Fiery, Vibrant</p>
+                        <div class="text-warning fw-bold text-center mt-2 fs-5" style="letter-spacing: 1.5px;">₱ 2,900.00</div>
                     </div>
+
                     <!-- Product 6 -->
                     <div class="product-card">
-                        <div class="product-image" style="background-image: url('images/Banaag.jpg');">
+                        <div class="product-image rounded" style="background-image: url('images/Banaag.jpg');">
                             <a href="#" class="image-overlay view-details-btn" 
                                data-title="Banaag" 
                                data-price="₱ 2,500.00" 
                                data-notes="Dalandan (Native Orange), Mango Nectar, Lotus Blossom, Light Amber" 
                                data-desc="Like the first rays of the morning sun breaking over the archipelago. Banaag is a lively, optimistic fragrance that brightens the day with a burst of native citrus and fresh tropical sweetness." 
                                data-image="images/Banaag.jpg">
-                               <span>View Details</span>
+                               <span class="text-uppercase border border-white text-white py-2 px-4">View Details</span>
                             </a>
                         </div>
-                        <h3>Banaag</h3>
-                        <p>Bright, Effervescent, Uplifting</p>
-                        <div class="product-price">₱ 2,500.00</div>
+                        <h3 class="text-uppercase mt-4 fs-4 text-center" style="letter-spacing: 1px;">Banaag</h3>
+                        <p class="text-secondary fst-italic text-center mt-2">Bright, Effervescent, Uplifting</p>
+                        <div class="text-warning fw-bold text-center mt-2 fs-5" style="letter-spacing: 1.5px;">₱ 2,500.00</div>
                     </div>
                 </div>
 
-                <!-- Right Arrow -->
                 <button class="carousel-btn next-btn" id="slide-right">&#10095;</button>
             </div>
         </div>
     </section>
 
     <!-- Visit Us Section -->
-    <section id="visit-us" class="content-section bg-alt scroll-reveal">
-        <div class="section-container text-center">
-            <h2>Visit Us</h2>
+    <section id="visit-us" class="bg-alt py-5 my-5 scroll-reveal">
+        <div class="container text-center py-4">
+            <h2 class="text-uppercase mb-0">Visit Us</h2>
             <div class="divider"></div>
-            <div class="contact-info">
-                <p>Experience the collection in person at our flagship boutique.</p>
-                <p class="highlight">Gethsemane Road, Casuntingan Mandaue City, Cebu</p>
-                <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
-            </div>
+            <p>Experience the collection in person at our flagship boutique.</p>
+            <p class="fs-5 text-white text-uppercase fw-semibold my-4" style="letter-spacing: 1px;">Gethsemane Road, Casuntingan Mandaue City, Cebu</p>
+            <p>Monday - Saturday: 10:00 AM - 8:00 PM</p>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact-us" class="content-section scroll-reveal">
-        <div class="section-container text-center">
-            <h2>Contact Us</h2>
+    <section id="contact-us" class="py-5 my-5 scroll-reveal">
+        <div class="container text-center">
+            <h2 class="text-uppercase mb-0">Contact Us</h2>
             <div class="divider"></div>
-            <p class="lead-text">For bespoke inquiries, wholesale, or customer assistance.</p>
-            <a href="mailto:inquiries@villarinscent.com" class="email-link">inquiries@villarinscent.com</a>
+            <p class="lead text-secondary">For bespoke inquiries, wholesale, or customer assistance.</p>
+            <a href="mailto:inquiries@villarinscent.com" class="email-link mt-3 text-uppercase text-white text-decoration-none pb-1 fs-4 d-inline-block">inquiries@villarinscent.com</a>
             
-            <div class="contact-socials">
-                <a href="#">Instagram</a>
-                <a href="#">Facebook</a>
-                <a href="#">TikTok</a>
+            <div class="d-flex justify-content-center gap-5 mt-5">
+                <a href="#" class="social-link text-white text-uppercase text-decoration-none" style="letter-spacing: 2px;">Instagram</a>
+                <a href="#" class="social-link text-white text-uppercase text-decoration-none" style="letter-spacing: 2px;">Facebook</a>
+                <a href="#" class="social-link text-white text-uppercase text-decoration-none" style="letter-spacing: 2px;">TikTok</a>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Villarin Scent and Co. All rights reserved.</p>
+    <footer class="text-center py-4 border-top border-secondary border-opacity-25" style="background-color: #080c17;">
+        <p class="mb-0 text-secondary text-uppercase" style="font-size: 0.75rem; letter-spacing: 1.5px;">&copy; 2026 Villarin Scent and Co. All rights reserved.</p>
     </footer>
 
-    <!-- Product Details Modal (Hidden) -->
-    <div id="product-modal" class="modal-overlay">
-        <div class="modal-content glass-panel">
-            <span class="close-modal" id="close-modal">&times;</span>
-            <div class="modal-body">
-                <div class="modal-image" id="modal-img"></div>
-                <div class="modal-info">
-                    <h3 id="modal-title">Product Title</h3>
-                    <div class="product-price modal-price" id="modal-price">₱ 0.00</div>
-                    <div class="divider" style="margin: 1.5rem 0; width: 40px;"></div>
-                    <p id="modal-desc" class="modal-desc-text">Description</p>
-                    <div class="modal-notes">
-                        <span class="notes-title">Key Notes:</span>
-                        <p id="modal-notes-text">Notes go here.</p>
+    <!-- Changed to Bootstrap Modal for Product Details -->
+    <div class="modal fade" id="productModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-xl">
+            <div class="modal-content glass-panel border-secondary border-opacity-25 text-light overflow-hidden">
+                <button type="button" class="btn-close btn-close-white position-absolute top-0 end-0 m-4 z-3" data-bs-dismiss="modal" aria-label="Close"></button>
+                <div class="row g-0">
+                    <div class="col-lg-6" id="modal-img" style="min-height: 400px; background-size: cover; background-position: center;"></div>
+                    <div class="col-lg-6 p-4 p-md-5 d-flex flex-column justify-content-center">
+                        <h3 id="modal-title" class="text-uppercase mb-2 display-6">Product Title</h3>
+                        <div class="text-warning fw-bold fs-4 mb-4" id="modal-price">₱ 0.00</div>
+                        <div style="width: 40px; height: 2px; background-color: #9ca3af; margin-bottom: 1.5rem;"></div>
+                        <p id="modal-desc" class="line-height-lg text-light mb-4">Description</p>
+                        
+                        <div class="p-4 mb-4 border-start border-warning border-3" style="background: rgba(255, 255, 255, 0.03);">
+                            <span class="text-uppercase text-secondary d-block mb-2" style="font-size: 0.85rem; letter-spacing: 2px;">Key Notes:</span>
+                            <p id="modal-notes-text" class="fst-italic mb-0">Notes go here.</p>
+                        </div>
+                        
+                        <!-- Inquire Now Handling -->
+                        <a href="#contact-us" id="modal-buy-btn" class="cta-button text-uppercase d-inline-block px-5 py-3 text-center" style="width: fit-content;">Inquire Now</a>
                     </div>
-                    <!-- Inquire Now -->
-                    <a href="#contact-us" class="cta-button modal-btn" id="modal-buy-btn">Inquire Now</a>
                 </div>
             </div>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/script.js"></script>
     
 </body>
-
 </html>
