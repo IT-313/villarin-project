@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     
-    // --- Carousel Slider Logic ---
+    // Carousel Slider Logic
     const track = document.getElementById('scent-track');
     const btnLeft = document.getElementById('slide-left');
     const btnRight = document.getElementById('slide-right');
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // --- Scroll Reveal Animation Observer ---
+    // Scroll Reveal Animation Observer
     const revealElements = document.querySelectorAll('.scroll-reveal');
     
     const revealObserver = new IntersectionObserver((entries, observer) => {
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // --- Product Details Modal Logic (Under Bootstrap Modal API) ---
+    // Product Details Modal Logic 
     const bsModalElement = document.getElementById('productModal');
     const bsModal = new bootstrap.Modal(bsModalElement);
     
@@ -50,39 +50,32 @@ document.addEventListener('DOMContentLoaded', () => {
     // Open Modal Function
     viewDetailsBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
-            e.preventDefault(); // Prevent page from jumping to top
+            e.preventDefault(); 
             
-            // Get data from the clicked button
-            const title = btn.getAttribute('data-title');
-            const price = btn.getAttribute('data-price');
-            const notes = btn.getAttribute('data-notes');
-            const desc = btn.getAttribute('data-desc');
-            const imageSrc = btn.getAttribute('data-image');
-
             // Inject data into the modal
-            modalTitle.textContent = title;
-            modalPrice.textContent = price;
-            modalNotes.textContent = notes;
-            modalDesc.textContent = desc;
-            modalImg.style.backgroundImage = `url('${imageSrc}')`;
+            modalTitle.textContent = btn.getAttribute('data-title');
+            modalPrice.textContent = btn.getAttribute('data-price');
+            modalNotes.textContent = btn.getAttribute('data-notes');
+            modalDesc.textContent = btn.getAttribute('data-desc');
+            modalImg.style.backgroundImage = `url('${btn.getAttribute('data-image')}')`;
 
-            // Trigger Bootstrap modal to show
             bsModal.show();
         });
     });
 
-    // Inquire Now routing
+    // Handle "Inquire Now" Button 
     if (modalBuyBtn) {
         modalBuyBtn.addEventListener('click', (e) => {
             e.preventDefault(); 
-            bsModal.hide(); 
+            bsModal.hide(); // Close modal
             
+            // Wait for fade transition, then scroll to Contact section
             setTimeout(() => {
                 const contactSection = document.getElementById('contact-us');
                 if (contactSection) {
                     contactSection.scrollIntoView({ behavior: 'smooth' });
                 }
-            }, 350); // 350ms Bootstrap's fade transition
+            }, 350); 
         });
     }
 });

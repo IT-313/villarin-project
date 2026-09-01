@@ -1,5 +1,6 @@
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 100px; 
 }
 
 :root {
@@ -20,7 +21,7 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .cta-button {
     font-family: var(--font-heading);
 }
 
-/* Global Persistent Background */
+/* Global Background */
 .global-bg {
     position: fixed;
     top: 0;
@@ -264,7 +265,7 @@ a.image-overlay {
 .social-link { transition: color 0.3s ease, transform 0.3s ease; }
 .social-link:hover { color: #eab308 !important; transform: translateY(-4px); }
 
-/* Responsive adjustments for custom track */
+/* Responsive adjustments */
 @media (max-width: 950px) { .product-card { flex: 0 0 calc((100% - 2.5rem) / 2); } }
 @media (max-width: 600px) { 
     .product-card { flex: 0 0 100%; } 
