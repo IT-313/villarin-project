@@ -63,7 +63,8 @@ h1, h2, h3, h4, h5, h6, .navbar-brand, .nav-link, .cta-button {
 
 /* Nav Link Hover Underline */
 .custom-nav-link {
-    font-size: 0.85rem;
+    font-size: 0.70rem;
+    white-space: nowrap;
     letter-spacing: 1px;
     position: relative;
     padding-bottom: 5px;
@@ -272,4 +273,21 @@ a.image-overlay {
     .product-image { height: 400px; }
     .prev-btn { left: 10px; } .next-btn { right: 10px; }
     .carousel-btn { width: 45px; height: 45px; font-size: 1rem; }
+}
+
+/* Makes placeholder texts visible light gray */
+.form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Ensure typed in text white */
+.form-control, .form-control:focus {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Calendar and clock icon on white */
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    cursor: pointer;
 }

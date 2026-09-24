@@ -37,6 +37,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Product Details Modal Logic 
     const bsModalElement = document.getElementById('productModal');
+
+    if (bsModalElement) {
     const bsModal = new bootstrap.Modal(bsModalElement);
     
     const viewDetailsBtns = document.querySelectorAll('.view-details-btn');
@@ -77,5 +79,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }, 350); 
         });
+    }
+}
+
+// Handle "Book Consultation" Form Submit
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingSuccess = document.getElementById('bookingSuccess');
+
+    if (bookingForm && bookingSuccess) {
+        bookingForm.addEventListener('submit', (e) => {
+            e.preventDefault(); // Prevents the page from reloading
+            
+            // Hide the form and show the success message
+            bookingForm.classList.add('d-none');
+            bookingSuccess.classList.remove('d-none');
+        });
+
+        // Reset the form when the modal is closed so it's ready for next time
+        const bookModalElement = document.getElementById('bookModal');
+        if (bookModalElement) {
+            bookModalElement.addEventListener('hidden.bs.modal', () => {
+                bookingForm.reset();
+                bookingForm.classList.remove('d-none');
+                bookingSuccess.classList.add('d-none');
+            });
+        }
+    }
+
+    // Handle "Inquire Now" Form Submit for Candles
+    const inquireModalElement = document.getElementById('inquireModal');
+    if (inquireModalElement) {
+        const inquireForm = inquireModalElement.querySelector('form');
+        if (inquireForm) {
+            inquireForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent page reload
+                
+                // Get the modal instance and hide it upon submission
+                const inquireBsModal = bootstrap.Modal.getInstance(inquireModalElement) || new bootstrap.Modal(inquireModalElement);
+                inquireBsModal.hide();
+                
+                // Reset the form inputs
+                inquireForm.reset();
+                
+                // Optional: You could add a small alert here like alert('Inquiry Sent!'); 
+                // but hiding it keeps it clean.
+            });
+        }
     }
 });
