@@ -121,9 +121,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Reset the form inputs
                 inquireForm.reset();
                 
-                // Optional: You could add a small alert here like alert('Inquiry Sent!'); 
-                // but hiding it keeps it clean.
             });
         }
     }
+
+    // Handle Main Contact Form Submit
+    const contactForm = document.getElementById('contactForm');
+    const contactSuccess = document.getElementById('contactSuccess');
+
+    if (contactForm && contactSuccess) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault(); 
+            
+            // Hide the form visually
+            contactForm.classList.add('d-none');
+            
+            // Display our success message
+            contactSuccess.classList.remove('d-none');
+
+            // Reset the form and show it back up after a 4-second delay
+            setTimeout(() => {
+                contactForm.reset();
+                contactSuccess.classList.add('d-none');
+                contactForm.classList.remove('d-none');
+            }, 4000);
+        });
+    }
+
 });
