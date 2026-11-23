@@ -4,7 +4,7 @@ html {
 }
 
 :root {
-    --color-dark: #0f172a;
+    --color-dark: #5c75af;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Roboto Serif', serif;
 }
@@ -290,4 +290,119 @@ a.image-overlay {
 ::-webkit-calendar-picker-indicator {
     filter: invert(1);
     cursor: pointer;
+}
+
+@media screen and (max-width: 440px) {
+    body {
+        background-color: #161020;
+    }
+
+    .global-bg::after {
+        background: linear-gradient(
+            to bottom,
+            rgba(26, 18, 36, 0.78),
+            rgba(18, 12, 26, 0.96)
+        );
+    }
+
+    .glass-panel {
+        background: rgba(30, 20, 42, 0.82) !important;
+    }
+
+    .bg-alt {
+        background-color: rgba(197, 188, 202, 0.04);
+        border-top-color: rgba(197, 188, 202, 0.08);
+        border-bottom-color: rgba(197, 188, 202, 0.08);
+    }
+
+    h1, h2, h3 {
+        color: #f4eff8;
+    }
+
+    /* Shifts Bootstrap gold accents (prices, subtitles, active links, icons) to Champagne Rose */
+    .text-warning {
+        color: #e5b8b7 !important;
+    }
+
+    /* Shifts Bootstrap gold card/form borders to match */
+    .border-warning {
+        border-color: #e5b8b7 !important;
+    }
+
+    .text-secondary {
+        color: #b5a8bf !important;
+    }
+
+    .navbar-toggler {
+        color: #c5bcca !important;
+    }
+
+    .custom-nav-link::after {
+        background-color: #e5b8b7;
+    }
+
+    .divider {
+        background: linear-gradient(90deg, #c5bcca, #e5b8b7);
+    }
+
+    .cta-button {
+        color: #c5bcca;
+        border-color: #c5bcca;
+        background: rgba(197, 188, 202, 0.08);
+    }
+
+    .cta-button::before {
+        background-color: #c5bcca;
+    }
+
+    .cta-button:hover {
+        color: #1a1224;
+        box-shadow: 0 0 18px rgba(197, 188, 202, 0.35);
+    }
+
+    .product-image {
+        background-color: #120c1a;
+    }
+
+    .product-card:hover {
+        box-shadow: 0 20px 40px -15px rgba(229, 184, 183, 0.2);
+    }
+
+    a.image-overlay {
+        background: rgba(26, 18, 36, 0.65);
+    }
+
+    .carousel-btn {
+        background: rgba(30, 20, 42, 0.8);
+        border-color: rgba(197, 188, 202, 0.35);
+        color: #c5bcca;
+    }
+
+    .carousel-btn:hover {
+        background: #c5bcca;
+        color: #1a1224;
+        box-shadow: 0 0 18px rgba(197, 188, 202, 0.3);
+    }
+
+    .form-control {
+        border-color: rgba(197, 188, 202, 0.35) !important;
+        background-color: rgba(197, 188, 202, 0.06) !important;
+    }
+
+    .form-control:focus {
+        border-color: #e5b8b7 !important;
+        box-shadow: 0 0 0 0.2rem rgba(229, 184, 183, 0.2);
+    }
+
+    .form-control::placeholder {
+        color: rgba(197, 188, 202, 0.65) !important;
+    }
+
+    .social-link:hover {
+        color: #e5b8b7 !important;
+    }
+
+    footer {
+        background-color: #120c1a !important;
+    }
 }
